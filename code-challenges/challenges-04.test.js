@@ -2,7 +2,7 @@
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
-Write a function called addTwo that takes in an array and adds two to every value using a for loop. Place the new value in a new array. Return the new array. 
+Write a function called addTwo that takes in an array and adds two to every value using a for loop. Place the new value in a new array. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
@@ -11,12 +11,12 @@ const addTwo = (arr) => {
   arr.forEach(element => {
     sumArray.push(element + 2);
   });
-  return sumArray
-}
+  return sumArray;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
-Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not. 
+Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not.
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
@@ -60,7 +60,7 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let regExp = /\b[A-Z].*?\b/g;
+  let regExp = /\b[A-Z][A-za-z]*?\b/g;
   let newStr = str.match(regExp);
   if (!newStr){
     newStr = [];
@@ -79,16 +79,16 @@ const citiesAtoJ = (arr) => {
   // Solution code here...
   const newArray = [];
   let resultArr;
-  const  regex = /^[A-J][a-z]*/g;
+  const regex = /^[A-J][a-z]*/g;
   arr.forEach(element => {
-  resultArr = element.match(regex);
+    resultArr = element.match(regex);
 
-  if (resultArr){
-    newArray.push(resultArr[0])
-  }
+    if (resultArr){
+      newArray.push(resultArr[0]);
+    }
   });
-    return newArray;
- 
+  return newArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -148,7 +148,7 @@ Run your tests from the console: jest challenges-04.solution.test.js
 describe('Testing challenge 1', () => {
   test('It should add two to every value', () => {
     expect(addTwo([1, 2, 4])).toStrictEqual([3, 4, 6]);
-  })
+  });
 });
 
 describe('Testing challenge 2', () => {
@@ -160,8 +160,8 @@ describe('Testing challenge 2', () => {
   });
   test('It should return false if the input does not contain a w', () => {
     expect(containsW('hello everyone')).toBe(false);
-  })
-})
+  });
+});
 
 describe('Testing challenge 3', () => {
   test('It should return true if the input is a number', () => {
@@ -187,7 +187,7 @@ describe('Testing challenge 4', () => {
   test('It should return false if the input does not contain the word school', () => {
     expect(containsWorld('hello everyone')).toBe(false);
   });
-})
+});
 
 describe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
