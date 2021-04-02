@@ -5,13 +5,13 @@ CHALLENGE 1 - Review
 
 Write a function named transformToLis that, given an object, returns an array of the key value pairs as html list items.
 
-For example: 
+For example:
 {
   name: 'bob',
   age: 32
 }
 
-Becomes: 
+Becomes:
 [
 <li>name: bob</li>,
 <li>age: 32</li>
@@ -64,7 +64,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  
+
   const newArray= arr.reduce((accumalator, val) => accumalator += 1, 0);
   return newArray;
 };
