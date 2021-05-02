@@ -14,7 +14,9 @@ You can assume that neither firstName nor lastName will be blank
 const toLastNames = people => {
   return people.map(val => Object.values(val).join(' '));
 };
-
+// const peopltoLastNamese2 = (arr) =>{
+//   return arr.map(el =>(`${el.firstName} ${el.lastName}`))
+//  }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 

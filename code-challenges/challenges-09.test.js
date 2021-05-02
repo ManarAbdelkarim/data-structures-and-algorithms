@@ -141,12 +141,10 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
-const reversedString = (str) => {
-  let strArray = str.split('');
-  const newArray = strArray.reduce((accumalator, val, idx) => {
-    return accumalator += strArray[strArray.length - idx - 1];
-  }, '');
-  return newArray;
+const reversedString = (str) =>{
+  return str.split('').reduce((accum,val)=>{
+    return val+accum;
+  },'');
 };
 
 /* ------------------------------------------------------------------------------------------------

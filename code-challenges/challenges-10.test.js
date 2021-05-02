@@ -47,6 +47,21 @@ const count = (target, input) => {
         .reduce((acc2, val2) => (val2 === target) ? acc2 += 1 : acc2, 0);
     }, 0);};
 
+
+
+//   const count =(int ,arr)=>{
+//   countVal =0;
+//   arr.map(el =>{
+//  el.reduce((accum ,val) =>{
+//    if(val === int ){
+//      ++countVal;
+//     return accum+=1;
+//      }
+//      return accum
+//   },0)
+//   })
+//   return countVal;
+// }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -63,6 +78,17 @@ const totalSum = (input) => {
       return accumulator += val
         .reduce((acc, val) => acc += val, 0);
     }, 0);};
+
+// const totalSum = (arr) =>{
+//   let arrayG =[];
+//   arrayG = arr.map(el =>{
+//     return el.reduce((accum,val)=>{
+//       return accum+=val;
+//     },0);
+//   });
+//   return arrayG.reduce(function(acc, val) { return acc + val; }, 0);
+
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -83,6 +109,15 @@ const divisibleByFiveTwoToThePower = (input) => {
       .map(newValue => Math
         .pow(2, newValue)));};
 
+// const divisibleByFiveTwoToThePower = (arr) =>{
+//   let arr1= arr.map(el =>{
+//      return el.filter(val => val !== NaN && val % 5 ===0))
+//    })
+//     arr1= arr1.map(el =>{
+//       return el.map(val => Math.pow(2, val))
+//     })
+//     return arr1;
+//     }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -147,9 +182,17 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   return data
-    .filter((element) => (element.gender == 'male' || element.gender == 'female'))
+    .filter((element) => (element.gender === 'male' || element.gender === 'female'))
     .map(element => element.name)
     .join(' and ');};
+
+// const findMaleAndFemale = (arr) =>{
+//   return arr.reduce((accum,val) =>{
+//     if(accum === ''){
+//           return val.gender === 'male'||'female' ?accum += `${val.name}`:accum
+//     }
+//     return val.gender === 'male'||'female' ?accum += ` and ${val.name}`:accum
+//   },'')
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -165,6 +208,12 @@ let findShortest = (data) => {
       return (parseInt(accumulator.height) < parseInt(value.height)) ? accumulator : value;
     }
   }, {}).name;};
+
+// const findShortest = (arr)=>{
+//   arr.sort(function(a, b){return a.height-b.height})
+//   return arr[0].name;
+//   }
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
