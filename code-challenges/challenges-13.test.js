@@ -17,7 +17,14 @@ const longestString = (arr) => {
     ));
     return index;
   }};
-
+  // const longestString = (arr) =>{
+  //   return arr.reduce((accum,val,index , array) =>{
+  //     if(index === 0){
+  //       return index
+  //     }
+  //     return val.split('').length > array[accum].split('').length ? index : accum
+  //   },-1)
+  // }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -32,6 +39,9 @@ const firstLetters = (arr) => {
   });
   return first;};
 
+// const firstLetters =(arr)=>{
+//   return arr.map(el=>el.split('')[0])
+//   }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -58,7 +68,15 @@ const standardizePhoneNumbers = (arr) => {
   return arr.map(element=>{
     return element.split(regex).join('');
   });};
-
+  // const standardizePhoneNumbers = (arr)=>{
+  //   return arr.map(arr=>{
+  // return arr.replace(/[()-\s]/g,'')
+  //   })
+  // }
+  // const standardizePhoneNumbers = (arr)=>{
+  //   return arr.map(arr=>{
+  // return arr.replace(/\D/g,'')
+  //   })
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -72,6 +90,10 @@ const onlyOddChars = (str) => {
     return index%2 ;
   }).join('');};
 
+// const onlyOddChars = (str)=>{
+//   return str.split('').filter((el,index)=>index% 2 ===1).join('')
+//   }
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -82,7 +104,13 @@ const allHappy = (arr) => {
   return arr.every(element => {
     return element.includes(':)');
   });};
-
+  // const allHappy = (arr)=>{
+  //   let answer = [] ;
+  // for(let val of arr){
+  //  /:\)/g.test(val)? answer.push(true): answer.push(false)
+  // }
+  // return answer.includes(false) ? false: true
+  // }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 

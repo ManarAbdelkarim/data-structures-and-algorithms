@@ -10,18 +10,22 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   const newArray = arr.reduce((accumulator, indx) => {
-    accumulator = ( accumulator === undefined || indx > accumulator ) ? indx : accumulator
+    accumulator = ( accumulator === undefined || indx > accumulator ) ? indx : accumulator;
     return accumulator;
   }, 0);
   return newArray;
 };
+
+// const func = (arr) =>{
+//   return arr.reduce((accum,val) =>accum>val ?accum :val,0)
+// }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named findMax that takes in a matrix of positive numbers and returns the number with the highest value.
 
-For example: 
+For example:
 [
   [1, 3, 4, 5],
   [4, 5, 6],
@@ -36,13 +40,16 @@ const findMax = (matrix) => {
     return accumulator > max ? accumulator : max;
   }, 0);
   return newMatrix;};
-
+  // const findMax = (arr)=>{
+  //   let array=  arr.reduce((accum,val) => accum.concat(Math.max(...val)),[])
+  //    return Math.max(...array);
+  //  }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
 Write a function named totalSum that takes in a matrix of numbers and returns the totalSum of all the numbers.
 
-For example: 
+For example:
 [
   [1, 3, 4, 5],
   [4, 5, 1],
@@ -57,6 +64,9 @@ const totalSum = (matrix) => {
   }, 0);
   return newMatrix;};
 
+// const totalSum = (arr) =>{
+//   return  arr.reduce((accum,val) =>accum + val.reduce((accum,val)=>accum +val ,0),0)
+//  }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -82,11 +92,20 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   const newStores = stores[0].map((element, indx) => {
-    return stores.reduce((accumulator, store) => accumulator += store[indx], 0)
+    return stores.reduce((accumulator, store) => accumulator += store[indx], 0);
   });
   return newStores;
 };
-
+// const grandTotal = (arr)=>{
+//   let array = [];
+//   for (let i =0; i< arr[0].length; i++){
+//     array[i]=0;
+//     for(let y = 0; y <arr.length; y++){
+//        array[i] += arr[y][i]
+//     }
+//   }
+//   return array ;
+//   }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -107,6 +126,17 @@ const salesData = (hours, data) => {
   });
   return myArray;};
 
+// const salesData = (arr,total) =>{
+//   const total = grandTotal(cookieStores);
+//   const array =[]
+// arr.forEach((el ,index) =>{
+//   array.push({
+//     time:el,
+//     sales:total[index]
+//   })
+// })
+// return array ;
+// }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -130,9 +160,18 @@ const errands = [
 
 const howManyTreats = (arr) => {
   const newArray = arr.reduce((accumulator, element) => {
-    return element.items.reduce((accumulator2, element2) => element2.name == 'Treats' ? element2.quantity : accumulator2, '')
+    return element.items.reduce((accumulator2, element2) => element2.name == 'Treats' ? element2.quantity : accumulator2, '');
   }, '');
   return newArray;};
+
+
+// const howManyTreats = (arr)=>{
+//   let num =0;
+// return arr.reduce((accum,el) =>{
+// return el.items.reduce((accum2,val) =>val.name === 'Treats' ? val.quantity : accum2,0)
+// },0)
+
+// }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -153,7 +192,9 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+
+  return board[row][col] === '#' ?'hit' : 'miss';
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -291,7 +332,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const battleshipData = [
     ['#', ' ', '#', ' '],
     ['#', ' ', '#', ' '],

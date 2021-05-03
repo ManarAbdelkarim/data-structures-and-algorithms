@@ -7,11 +7,9 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 ------------------------------------------------------------------------------------------------ */
 
-function returnTen(str){
-  // Solution code here...
-  let newArray = str.split(''); let strArray = newArray.splice(newArray.length - 10); return strArray;
-
-}
+const returnTen = (string) =>{
+  return string.split('').splice(string.length-10);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -28,7 +26,6 @@ const typeNum = (arr) => {
   });
   return newArray;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3

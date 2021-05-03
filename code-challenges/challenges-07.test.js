@@ -17,10 +17,8 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  const newArray = [];
-  arr.map(element=>{
-    newArray.push(element +1);
-  });
+  const newArray =
+  arr.map(element => element +1);
   return newArray;
 };
 
@@ -31,12 +29,11 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  const newArray =[];
-  arr.map(element=>{
-    newArray.push(`${element}?`);
-  });
+  const newArray =
+  arr.map(element=>`${element}?`);
   return newArray;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
