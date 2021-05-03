@@ -20,4 +20,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | challenge | link |
 | -----------  | ------    |
 
-| array_revers        | [link](https://github.com/ManarAbdelkarim/data-structures-and-algorithms/tree/array-reverse/python/code_challenges/array_reverse)  |
+| array_revers        | [link](https://github.com/ManarAbdelkarim/data-structures-and-algorithms/tree/array-reverse/python/challenges/array_reverse)  |
