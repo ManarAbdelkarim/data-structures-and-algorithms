@@ -9,4 +9,4 @@ calue in the list or -1 if the value is not found
 I used O(log n) because it is a liner ur order list so O(log n) will perform better in speed and time 
 
 ## Solution
-![](../img/IMG_4114.jpg)
+![](../img/KWL_Chart.jpg)

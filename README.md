@@ -23,3 +23,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | array_revers        | [link](https://manarabdelkarim.github.io/data-structures-and-algorithms/python/challenges/array_reverse/)  |
 | -----------  | ------    |
 | array_shift       | [link](https://manarabdelkarim.github.io/data-structures-and-algorithms/python/challenges/array_shift/)  |
+| array_binary_search       | [link](https://manarabdelkarim.github.io/data-structures-and-algorithms/python/challenges/array_binary_search/)  |
