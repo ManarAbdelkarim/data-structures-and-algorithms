@@ -17,3 +17,25 @@ def BinarySearch(list, search_key):
 # print(BinarySearch([4,8,15,16,23,42],15))	
 # print(BinarySearch([11,22,33,44,55,66,77],90))
 # print(BinarySearch([1, 2, 3, 5, 6, 7], 4))
+
+# def math_series(external_num):
+
+#            num = external_num
+
+#            if num < 0 :
+
+#                    return None
+
+#            if num == 0 :
+
+#                     return 0
+
+#            if num == 1:
+
+#                     return 1
+
+#            else:
+
+#                    return math_series(num-1) + math_series(num-2)
+
+# print(math_series(30))

@@ -24,3 +24,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | -----------  | ------    |
 | array_shift       | [link](https://manarabdelkarim.github.io/data-structures-and-algorithms/python/challenges/array_shift/)  |
 | array_binary_search       | [link](https://manarabdelkarim.github.io/data-structures-and-algorithms/python/challenges/array_binary_search/)  |
+| linked_list       | [link](https://manarabdelkarim.github.io/data-structures-and-algorithms/python/challenges/data_structure/linked_list/)  |
