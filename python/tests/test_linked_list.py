@@ -14,12 +14,12 @@ def test_includes(list_test):
     
     
 def test_insertAfter(list_test):
-    actual = insertAfter("Manar", "Roya")
+    actual = list_test.insertAfter("Manar", "Roya")
     excpected = f' Roya added secssfuly...'
     assert excpected == actual
 
 def test_insertAfterNone(list_test):
-    actual = insertAfter("M", "Roya")
+    actual = list_test.insertAfter("M", "Roya")
     excpected = "this node is not exist!"
     assert excpected == actual
     
