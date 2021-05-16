@@ -67,7 +67,7 @@ class Linked_list:
             current.next = new_node
             
             
-  def insertAfter(self, data, newVal):
+  def insertAfter(self, value, newVal):
     
         new_node = Node(newVal)
         current = self.head
