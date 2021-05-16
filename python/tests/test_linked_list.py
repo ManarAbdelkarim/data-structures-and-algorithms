@@ -11,7 +11,18 @@ def test_includes(list_test):
     actual = [list_test.includes(55),list_test.includes("Manar"),list_test.includes(5)]
     excpected = [False, True , False]
     assert excpected == actual
+    
+    
+def test_includes(list_test):
+    actual = insertAfter("Manar", "Roya")
+    excpected = f' Roya added secssfuly...'
+    assert excpected == actual
 
+def test_includes(list_test):
+    actual = insertAfter("M", "Roya")
+    excpected = "this node is not exist!"
+    assert excpected == actual
+    
 
 @pytest.fixture
 def list_test():
