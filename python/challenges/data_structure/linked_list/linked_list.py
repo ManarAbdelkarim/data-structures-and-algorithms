@@ -54,6 +54,40 @@ class Linked_list:
         current = current.next
     return False
 
+  def append(self, value):
+        
+        new_node = Node(value)
+        current = self.head
+        if not self.head:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+            
+            
+  def insertAfter(self, data, newVal):
+    
+        new_node = Node(newVal)
+        current = self.head
+        if not self.head:
+                self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                if current.next.data == value:
+                    current = current.next
+                    old_node = current.next
+                    current.next = new_node
+                    new_node.next = old_node
+                    return  f' "{newVal}" added secssfuly...'
+                else:
+                    current = current.next
+                    
+            return "this node is not exist!"
+
+
 
   
 
