@@ -26,8 +26,8 @@ def test_insertAfterNone(list_test):
 
 def test_kthFromEnd(list_test):
 
-    actual = [list_test.kthFromEnd(4),list_test.kthFromEnd(-1),list_test.kthFromEnd(3),list_test.kthFromEnd(0)]
-    expected = ['4 is not in the range of the list' , '-1 is not in the range of the list','3 is not in the range of the list' ,'Reem']
+    actual = [list_test.kthFromEnd(4),list_test.kthFromEnd(-1),list_test.kthFromEnd(3),list_test.kthFromEnd(0),list_test.kthFromEnd(1)]
+    expected = ['4 is not in the range of the list' , '-1 is not in the range of the list','3 is not in the range of the list' ,'Reem','Manar']
     assert actual == expected
     
 
