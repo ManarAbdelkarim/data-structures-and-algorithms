@@ -24,6 +24,13 @@ def test_insertAfterNone(list_test):
     assert excpected == actual
     
 
+def test_kthFromEnd(list_test):
+
+    actual = [list_test.kthFromEnd(4),list_test.kthFromEnd(-1),list_test.kthFromEnd(3),list_test.kthFromEnd(0)]
+    expected = ['4 is not in the range of the list' , '-1 is not in the range of the list','3 is not in the range of the list' ,'Reem']
+    assert actual == expected
+    
+
 @pytest.fixture
 def list_test():
     linked = Linked_list()

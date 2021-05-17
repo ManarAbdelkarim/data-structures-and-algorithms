@@ -90,6 +90,31 @@ class Linked_list:
 
 
   
+  def kthFromEnd(self,k:int):
+    length = 0
+    current = self.head
+    while(current):
+        length += 1
+        current = current.next
+
+    if k >= length or k < 0:
+      return f"{k} is not in the range of the list"  
+        
+    current = self.head
+
+    for i in range(0,length-k):
+        if i== length-k-1:
+            return current.data
+            break
+        current = current.next
+
+
+linked = Linked_list()
+linked.insert("Reem")
+linked.insert("Manar")
+linked.insert(10)
+
+print(linked)
 
 # Write program here
 if __name__ == "__main__":
