@@ -90,6 +90,124 @@ class Linked_list:
 
 
   
+  def kthFromEnd(self,k:int):
+    '''
+    this function will find the value of the node number k
+    from the end and return it .. if k is out of range or negative 
+    it will return error message
+    '''
+    length = 0
+    current = self.head
+    while(current):
+        length += 1
+        current = current.next
+
+    if k >= length or k < 0:
+      return f"{k} is not in the range of the list"  
+        
+    current = self.head
+
+    for i in range(0,length-k-1):
+        current = current.next
+    return current.data
+
+
+
+  
+  def zipLists(first, second):
+     '''
+    this function will take two linked list and merge them in a zip style
+    ex: linked_list1 = 1->2->3->None , linked_list2 = 4->5->6->None
+    will return 1->4->2->5->3->6->None 
+    '''
+     current1 = first.head
+     current2 = second.head
+     length1 =0
+     length2 =0
+     temp = {}
+     while(current1):
+        length1 += 1
+        current1 = current1.next
+
+     while(current2):
+        length2 += 1
+        current2 = current2.next
+
+     if length1 < length2:
+       temp =first
+       first = second
+       second =temp
+
+     current1 = first.head
+     current2 = second.head
+
+     while current1 and current2:
+
+
+  
+            first_next = current1.next
+            second_next = current2.next
+  
+            current2.next = first_next 
+            current1.next = current2 
+
+  
+            current1 = first_next
+            current2 = second_next
+            second.head = current2
+
+     return f"{first}"
+
+'''
+[10 -> Manar ->Reem->12 -> mero ]
+length =5
+k =2
+5-1-1
+'''
+
+llist1 = Linked_list()
+llist2 = Linked_list()
+llist1.append(3)
+llist1.append(2)
+# llist1.append(1)
+# llist1.append(6)
+# llist1.append(5)
+# llist1.append(4)
+# llist1.append(6)
+# llist1.append(5)
+# llist1.append(4)
+  
+print ("First Linked List:")
+# print(llist1)
+  
+llist2.append(8)
+llist2.append(7)
+llist2.append(6)
+llist2.append(5)
+llist2.append(4)
+  
+print ("Second Linked List:")
+  
+print(llist2)
+print(Linked_list.zipLists(llist1,llist2))
+  
+# print ("Modified first linked list:")
+# print(llist1)
+  
+# print ("Modified second linked list:")
+# print(llist2)
+
+
+
+
+# linked = Linked_list()
+# linked.insert("Reem")
+# linked.insert("Manar")
+# linked.insert(10)
+# linked.insert("Manar")
+# linked.insert(10)
+
+# print(linked)
 
 # Write program here
 if __name__ == "__main__":

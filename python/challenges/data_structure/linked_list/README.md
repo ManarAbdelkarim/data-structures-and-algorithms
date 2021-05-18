@@ -23,3 +23,6 @@ memory O(n)
 insert : perpend a new node to the beginning of the linked list
 includes: search for a value inside the linked list
 
+
+## zip_list Solution:
+![](../../img/zip_linked.png)
