@@ -1,6 +1,6 @@
 # Define Node
 from typing import overload
-
+import sys
 
 class Node():
   def __init__(self, data=None):
@@ -111,65 +111,92 @@ class Linked_list:
         current = current.next
     return current.data
 
+  def length(self):
+      length = 0
+      current = self.head
+      while(current):
+          length += 1
+          current = current.next
+      return length
 
-
-  
-  def zipLists(first, second):
-     '''
-    this function will take two linked list and merge them in a zip style
-    ex: linked_list1 = 1->2->3->None , linked_list2 = 4->5->6->None
-    will return 1->4->2->5->3->6->None 
-    '''
-     current1 = first.head
-     current2 = second.head
-     length1 =0
-     length2 =0
-     temp = {}
-     while(current1):
-        length1 += 1
-        current1 = current1.next
-
-     while(current2):
-        length2 += 1
-        current2 = current2.next
-
-     if length1 < length2:
-       temp =first
-       first = second
-       second =temp
-
-     current1 = first.head
-     current2 = second.head
-
-     while current1 and current2:
 
 
   
-            first_next = current1.next
-            second_next = current2.next
+  # def zipLists(first, second):
+  #    '''
+  #   this function will take two linked list and merge them in a zip style
+  #   ex: linked_list1 = 1->2->3->None , linked_list2 = 4->5->6->None
+  #   will return 1->4->2->5->3->6->None 
+  #   '''
+  #   #  current1 = first.head
+  #   #  current2 = second.head
+  #   #  length1 =0
+  #   #  length2 =0
+  #   #  temp = {}
+  #   #  while(current1):
+  #   #     length1 += 1
+  #   #     current1 = current1.next
+
+  #   #  while(current2):
+  #   #     length2 += 1
+  #   #     current2 = current2.next
+  #    print("first", first.length())
+  #    print("second",second.length())
+
+  #    if first.length() < second.length():
+  #      temp =first
+  #      first = second
+  #      second =temp
+
+  #    current1 = first.head
+  #    current2 = second.head
+
+  #    while current1 and current2:
+
+  #           first_next = current1.next
+  #           second_next = current2.next
   
-            current2.next = first_next 
-            current1.next = current2 
+  #           current2.next = first_next 
+  #           current1.next = current2 
 
-  
-            current1 = first_next
-            current2 = second_next
-            second.head = current2
+  #           current1 = first_next
+  #           current2 = second_next
+  #           second.head = current2
 
-     return f"{first}"
+  #    return f"{first}"
 
-'''
-[10 -> Manar ->Reem->12 -> mero ]
-length =5
-k =2
-5-1-1
-'''
+
+
+
+
+  def zipLists(first_ll, second_ll):
+    new_linked_list = Linked_list()
+
+    if first_ll.length() > second_ll.length():
+        longer_ll = first_ll.length()
+    else:
+        longer_ll = second_ll.length() 
+
+    current1 = first_ll.head
+    current2 = second_ll.head
+
+    for i in range(longer_ll):
+        if current1:
+            new_linked_list.append(current1.data)
+            current1 = current1.next
+        if current2:
+            new_linked_list.append(current2.data)
+            current2 = current2.next    
+        
+    return new_linked_list.__str__()
+
+
 
 llist1 = Linked_list()
 llist2 = Linked_list()
 llist1.append(3)
 llist1.append(2)
-# llist1.append(1)
+llist1.append(1)
 # llist1.append(6)
 # llist1.append(5)
 # llist1.append(4)
