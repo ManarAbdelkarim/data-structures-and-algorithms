@@ -7,6 +7,8 @@ dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 ![](../img/code-ch3-Binary-Search.jpg)
+
+__this is a collaboration with Noura and Raneem__ 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 Big O(1)
