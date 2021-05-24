@@ -6,9 +6,10 @@ authors = ["JB-Tellez <jb.tellez@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pytest = "^6.2.4"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
+pytest = "^6.2.4"
 poetry = "^1.1.6"
 black = {version = "^21.5b1", allow-prereleases = true}
 

@@ -166,7 +166,43 @@ class Linked_list:
   #    return f"{first}"
 
 
+  def is_pal_fun(linked):
 
+   linked_list = linked
+   print(linked)
+
+   current = linked_list.head
+
+   compare_list = []
+
+   is_pal = True
+
+   while  current:
+
+      compare_list.append(current.data)
+
+      current = current.next
+
+   print(compare_list)
+
+
+   if len(compare_list) == 1 or  len(compare_list) == 0:
+
+      return False
+
+   while current :
+
+        last_element = compare_list.pop()
+
+        if  current.data != last_element:
+
+          return False
+
+        current = current.next
+
+
+
+   return is_pal
 
 
   def zipLists(first_ll, second_ll):
@@ -194,9 +230,11 @@ class Linked_list:
 
 llist1 = Linked_list()
 llist2 = Linked_list()
-llist1.append(3)
-llist1.append(2)
-llist1.append(1)
+# llist1.append(1)
+# llist1.append(2)
+# llist1.append(1)
+# print(Linked_list.is_pal_fun(llist1))
+# print(llist1.is_pal_fun())
 # llist1.append(6)
 # llist1.append(5)
 # llist1.append(4)
@@ -204,19 +242,19 @@ llist1.append(1)
 # llist1.append(5)
 # llist1.append(4)
   
-print ("First Linked List:")
+# print ("First Linked List:")
 # print(llist1)
   
-llist2.append(8)
-llist2.append(7)
-llist2.append(6)
-llist2.append(5)
-llist2.append(4)
+# llist2.append(8)
+# llist2.append(7)
+# llist2.append(6)
+# llist2.append(5)
+# llist2.append(4)
   
-print ("Second Linked List:")
+# print ("Second Linked List:")
   
-print(llist2)
-print(Linked_list.zipLists(llist1,llist2))
+# print(llist2)
+# print(Linked_list.zipLists(llist1,llist2))
   
 # print ("Modified first linked list:")
 # print(llist1)
