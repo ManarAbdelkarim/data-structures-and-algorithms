@@ -1,62 +1,117 @@
-from challenges.queue_with_stacks.queue_with_stacks import *
-import pytest
-
-def test_enqueue(queue_test):
-    excpected = "one\ntwo\nthree"
-    actual = f"{queue_test}"
-    assert excpected == actual
-
-def test_enqueue_to_empty():
-    queue = PseudoQueue()
-    queue.enqueue("one")
-    excpected = "one"
-    actual = f"{queue}"
-    assert excpected == actual
-
-def test_peek(queue_test):
-    excpected = "one"
-    actual = f"{queue_test.peek()}"
-    assert excpected == actual
+class EmptyStackException(Exception):
+  pass
 
 
-def test_empty_queue_peek():
-    queue = PseudoQueue()
-    with  pytest.raises(EmptyStackException):
-        queue.peek()
 
-def test_empty_queue_dequeue():
-    queue = PseudoQueue()
-    with  pytest.raises(EmptyStackException):
-        queue.dequeue()
+class Node: 
+  def __init__(self, value=None):
+    self.value = value
+    self.next = None
 
-def test_dequeue(queue_test):
-    queue_test.dequeue()
-    excpected = "two\nthree"
-    actual = f"{queue_test}"
-    assert excpected == actual
+class Stack:
+  def __init__(self, node=None):
+    self.top = node
+  
+  def push(self, value):
+    if not self.top:
+      self.top = Node(value)
+    else:
+      node = Node(value)
+      node.next = self.top
+      self.top = node
+  
+  def pop(self):
+      if not self.is_empty():
+            temp = self.top
+            self.top = self.top.next
+            temp.next = None
+            return temp.value
+      raise EmptyStackException("Cannot pop from an empty stack")
+  
+  def is_empty(self):
+    """ Returns True if Empty and false otherwise """
+    if self.top:
+      return False
+    return True
+
+  def peek(self):
+    """ Returns the value at the top without modifying the stack, raises an exception otherwise """
+    if not self.is_empty():
+      return self.top.value
+    
+    raise EmptyStackException("Cannot peek an empty stack")
+  
+  def __str__(self):
+    current = self.top
+    items = []
+    while current:
+      items.append(str(current.value))
+      current = current.next
+    return "\n".join(items)
+
+class Queue:
+  def __init__(self):
+    self.front = None
+    self.rear = None
 
 
-def test_adding_multiple_to_queue():
-    queue = PseudoQueue()
-    for i in range(1,4):
-        queue.enqueue(i)
-    excpected = "1\n2\n3"
-    actual = f"{queue}"
-    assert excpected == actual
+  def is_empty(self):
+    """ Returns True if Empty and false otherwise """
+    if self.front:
+      return False
+    return True
 
-@pytest.fixture
-def stack_test():
-  stack = PseudoQueue()
+  def enqueue(self, value):
+    """ Add an item to the rear fo the queue """
+    node = Node(value)
+
+    if not self.front:
+      # we have an emtpy queue
+      self.front = node
+      self.rear = node
+    else:
+      # make sure the previous rear will now point to the new node
+      self.rear.next = node
+      # move our rear to point to the new node
+      self.rear = self.rear.next
+
+
+  def dequeue(self):
+      """ delete an item to the rear fo the queue """
+      if not self.is_empty():
+        temp = self.front
+        self.front = self.front.next
+        temp.next = None
+        return temp.value
+      raise EmptyStackException("Cannot dequeue an empty queue")
+
+  def peek(self):
+    """ Returns the value at the top without modifying the stack, raises an exception otherwise """
+    if not self.is_empty():
+      return self.front.value
+    
+    raise EmptyStackException("Cannot peek an empty queue")
+      
+  def __str__(self):
+    current = self.front
+    items = []
+    while current:
+      items.append(str(current.value))
+      current = current.next
+    return "\n".join(items)
+
+if __name__ == "__main__":
+  stack = Stack()
+
   stack.push('one')
   stack.push("two")
   stack.push("three")
-  return stack
+  print(stack)
 
-
-@pytest.fixture
-def queue_test():
-  queue = PseudoQueue()
-  queue.enqueue("one")
-  queue.enqueue("two")
-  queue.enqueue("three")
-  return queue
+  queue = Queue()
+  queue.enqueue("Manar")
+  queue.enqueue("Noura")
+  queue.enqueue("Reema")
+  print(queue)
+  print("*********")
+  print(queue.peek())
