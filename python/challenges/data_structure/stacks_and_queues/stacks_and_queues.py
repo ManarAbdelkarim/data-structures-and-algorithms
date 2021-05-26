@@ -102,22 +102,11 @@ class Queue:
 
 if __name__ == "__main__":
   stack = Stack()
-  # print(stack)
-  # print(stack.peek())
-#   stack.push(5)
-#   stack.push(4)
-#   stack = Stack()
+
   stack.push('one')
   stack.push("two")
   stack.push("three")
   print(stack)
-
-  # print(stack)
-  # print(stack.peek())
-#   print(stack)
-#   stack.pop()
-#   print(stack)
-
 
   queue = Queue()
   queue.enqueue("Manar")
