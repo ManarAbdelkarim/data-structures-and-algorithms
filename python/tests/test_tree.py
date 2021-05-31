@@ -82,6 +82,14 @@ def test_maximum():
   assert actual == expected 
 
 
+def test_breadth_first(tree_breadth):
+    actual = tree_breadth.bread_first()
+    expected = [2, 7, 5, 2, 6, 9, 5, 11, 4]
+    assert actual == expected
+
+
+
+
 @pytest.fixture
 def tree_test():
     node1 = TNode(1)
@@ -90,3 +98,18 @@ def tree_test():
     node1.right.left = TNode(4)
     node1.right.right = TNode(5)
     return node1
+
+
+@pytest.fixture
+def tree_breadth():
+    node1 = TNode(2)
+    node1.left = TNode(7)
+    node1.left.right = TNode(6)
+    node1.left.right.left = TNode(5)
+    node1.left.right.right = TNode(11)
+    node1.left.left = TNode(2)
+    node1.right = TNode(5)
+    node1.right.right = TNode(9)
+    node1.right.right.left = TNode(4)
+    binary_tree = Binary_tree(node1)
+    return binary_tree 
