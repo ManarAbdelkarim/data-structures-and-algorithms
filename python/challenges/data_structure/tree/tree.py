@@ -229,18 +229,18 @@ class Binary_search_tree:
         return False
 
 
-if __name__ == "__main__":
-  node1 = TNode(2)
-  node1.left = TNode(7)
-  node1.left.right = TNode(6)
-  node1.left.right.left = TNode(5)
-  node1.left.right.right = TNode(11)
-  node1.left.left = TNode(2)
-  node1.right = TNode(5)
-  node1.right.right = TNode(9)
-  node1.right.right.left = TNode(4)
-  binary_tree = Binary_tree(node1)
-  print(f' here bread_first {binary_tree.bread_first()}')
+# if __name__ == "__main__":
+node1 = TNode(2)
+node1.left = TNode(7)
+node1.left.right = TNode(6)
+node1.left.right.left = TNode(5)
+node1.left.right.right = TNode(11)
+node1.left.left = TNode(2)
+node1.right = TNode(5)
+node1.right.right = TNode(9)
+node1.right.right.left = TNode(4)
+binary_tree = Binary_tree(node1)
+print(f' here bread_first {binary_tree.bread_first()}')
 
   # print(binary_tree.pre_order())
   # print("-"*20)
@@ -249,7 +249,7 @@ if __name__ == "__main__":
   # print("-"*20)
   # print(binary_tree.post_order())
 
-  print("the maximum is " , binary_tree.find_maximum_value())
+print("the maximum is " , binary_tree.find_maximum_value())
 
   # sb = Binary_search_tree()
   # sb.add(5)
@@ -414,23 +414,23 @@ if __name__ == "__main__":
 #                 return  self.node.right.contains(value, self.node)
 #             else: return False
 
-# #   def pre_order_iter(self):
-# #     stack = Stack()
-# #     stack.push(self.root)
+#   def pre_order_iter(self):
+#     stack = Stack()
+#     stack.push(self.root)
 
-# #     while not stack.is_empty():
-# #       item = stack.pop()
-# #       print(item.value)
+#     while not stack.is_empty():
+#       item = stack.pop()
+#       print(item.value)
 
-# #       if item.right is not None:
-# #         stack.push(item.right)
+#       if item.right is not None:
+#         stack.push(item.right)
 
-# #       if item.left is not None:
-# #         stack.push(item.left)
+#       if item.left is not None:
+#         stack.push(item.left)
   
-# #   def bread_first(self):
-# #      # Use queque for FIFO
-# #      pass
+#   def bread_first(self):
+#      # Use queque for FIFO
+#      pass
 
 
 
@@ -611,9 +611,93 @@ if __name__ == "__main__":
 # #     print(binary_tree.post_order())
 
 
-# # # Think about
-# # class KNode:
-# #   def __init__(self, value=None):
-# #     self.value = value
-# #     # How could you implement this for k of any size?
-# #     self.children = []
+# Think about
+class KNode:
+  def __init__(self, value=None):
+    self.value = value
+    # How could you implement this for k of any size?
+    self.children = []
+
+
+class K_tree:
+  def __init__(self, root=None):
+    self.root = root
+
+
+  def __str__(self):
+    if self.root is None:
+        return f"{self.root}"
+    return f"{self.root.value}"
+
+  def bread_first(self):
+     # Use queque for FIFO
+     self.bread_first_list = []
+     queque = Queue()
+     queque.enqueue(self.root)
+     while not queque.is_empty():
+      item = queque.dequeue()
+      self.bread_first_list.append(item.value)
+
+      if len(item.children) > 0 :
+        for i in item.children:
+          queque.enqueue(i)
+
+
+     return self.bread_first_list
+
+
+
+
+  def FizzBuzzTree(self):
+     # Use queque for FIFO
+     self.fizzbuzzlist = []
+     dk_node = KNode(self.root.value)
+     
+     dk_node.children = self.root.children
+     dummy_tree = K_tree(dk_node)
+
+     queque = Queue()
+     queque.enqueue(dummy_tree.root)
+     while not queque.is_empty():
+      item = queque.dequeue()
+      print("the item value" , item.value)
+      if item.value % 15 == 0:
+       item.value = "FizzBuzz"
+      elif item.value % 3 ==0 :
+       item.value = 'Fizz'
+      elif item.value % 5 ==0:
+        item.value = 'Buzz'
+      else :
+        item.value = str(item.value)
+      self.fizzbuzzlist.append(item.value)
+
+      if len(item.children) > 0 :
+        for i in item.children:
+          queque.enqueue(i)
+
+     print(dummy_tree.bread_first())
+    #  print(self.bread_first())
+     return self.fizzbuzzlist
+          
+
+  
+
+if __name__ == "__main__":
+  
+  node1 = KNode(2)
+  node1.children.append(KNode(7))
+  node1.children.append(KNode(3))
+  node1.children.append(KNode(3))
+  node1.children[0].children.append(KNode(6))
+  node1.children[1].children.append(KNode(2))
+  node1.children[1].children.append(KNode(9))
+  node1.children[2].children.append(KNode(5))
+  node1.children[2].children.append(KNode(1))
+  node1.children[2].children.append(KNode(8))
+
+  k_tree = K_tree(node1)
+  print(k_tree.bread_first())
+  print(k_tree.FizzBuzzTree())
+ 
+
+
