@@ -228,6 +228,32 @@ class Binary_search_tree:
       else:
         return False
 
+  def sum_odd(self):
+    sum = 0
+    def add_item(root):
+      if root.value % 2 ==1:
+        sum = sum+ root.values
+      if root.left:
+        add_item(root.left)
+      if root.right:
+        add_item(root.right)
+    return sum
+
+  def sum_odd(self):
+    sum = 0
+    def add_item(root):
+      nonlocal sum
+      if root.value % 2 ==1:
+        sum = sum+ root.value
+      if root.left:
+        add_item(root.left)
+      if root.right:
+        add_item(root.right)
+    add_item(self.node)    
+    return sum
+      
+
+
 
 # if __name__ == "__main__":
 node1 = TNode(2)
@@ -240,7 +266,8 @@ node1.right = TNode(5)
 node1.right.right = TNode(9)
 node1.right.right.left = TNode(4)
 binary_tree = Binary_tree(node1)
-print(f' here bread_first {binary_tree.bread_first()}')
+
+# print(f' here bread_first {binary_tree.bread_first()}')
 
   # print(binary_tree.pre_order())
   # print("-"*20)
@@ -563,30 +590,31 @@ print("the maximum is " , binary_tree.find_maximum_value())
 
 
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
 #     print(BinaryTree.find_maximum_value())
 
-#     sb = Binary_search_tree()
-#     sb.add(5)
-#     sb.add(4)
-#     sb.add(3)
-#     sb.add(1)
-#     sb.add(2)
-#     sb.add(6)
-#     sb.add(100)
-#     sb.add(0)
-#     print(sb.contains(3),sb.c )
-# #     obj = BinarySearchTree()
-# #     bst_node = BSTNode(50)
-# #     bst_node = obj.add(bst_node, 20)
-# #     bst_node = obj.add(bst_node,600)
-# #     bst_node = obj.add(bst_node,100)
-# #     bst_node = obj.add(bst_node,1)
-# #     bst_node = obj.add(bst_node,1000)
-# #     print(obj.pre_order(bst_node))
-# #     print(obj.contains(bst_node,0))
-# #     print(obj.contains(bst_node,20))
-# #     print(obj.contains(bst_node,1))
+    sb = Binary_search_tree()
+    sb.add(5)
+    sb.add(4)
+    sb.add(3)
+    sb.add(1)
+    sb.add(2)
+    sb.add(6)
+    sb.add(100)
+    sb.add(0)
+    # print(sb.contains(3),sb.c )
+    print("the sum of the odd", sb.sum_odd())
+#     obj = BinarySearchTree()
+#     bst_node = BSTNode(50)
+#     bst_node = obj.add(bst_node, 20)
+#     bst_node = obj.add(bst_node,600)
+#     bst_node = obj.add(bst_node,100)
+#     bst_node = obj.add(bst_node,1)
+#     bst_node = obj.add(bst_node,1000)
+#     print(obj.pre_order(bst_node))
+#     print(obj.contains(bst_node,0))
+#     print(obj.contains(bst_node,20))
+#     print(obj.contains(bst_node,1))
 
 
 

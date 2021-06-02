@@ -38,7 +38,7 @@ class Linked_list:
     current = self.head
     while current:
       # step 2 - append each data to the string
-      output += "{%s} -> " %(current.data,) 
+      output += "{%s} -> " %(current.data,)
       # step 2b:  move to the next item
       current = current.next
     output += " NULL"
