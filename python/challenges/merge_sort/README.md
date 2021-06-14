@@ -4,7 +4,7 @@ Review the pseudocode below, then trace the algorithm by stepping through the pr
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-
+![](../img/merge_sort.jpg)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 speed(n)
