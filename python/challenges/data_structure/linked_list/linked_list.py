@@ -18,17 +18,17 @@ class Linked_list:
   # define your append method
   def insert (self, data=None):
     new_node = Node(data)
-    # Once we have a head 
+    # Once we have a head
     if self.head :
       new_node.next = self.head # set our current pointer to the head
-      #Assign new_node to self.head 
+      #Assign new_node to self.head
     self.head = new_node
       # while there is a following node that's not None
-    
-   
+
+
 #   # __str__ , __repr__
   def __str__(self):
-  
+
     """ Returns a string representation of the linked list
         1 -> 3 -> 4 -> null
     """
@@ -47,7 +47,7 @@ class Linked_list:
     return output
 
   def includes(self,value):
-    current = self.head 
+    current = self.head
     while (current):
         if current.data == value :
             return True
@@ -55,7 +55,7 @@ class Linked_list:
     return False
 
   def append(self, value):
-        
+
         new_node = Node(value)
         current = self.head
         if not self.head:
@@ -65,10 +65,10 @@ class Linked_list:
             while current.next:
                 current = current.next
             current.next = new_node
-            
-            
+
+
   def insertAfter(self, value, newVal):
-    
+
         new_node = Node(newVal)
         current = self.head
         if not self.head:
@@ -84,16 +84,16 @@ class Linked_list:
                     return  f' "{newVal}" added secssfuly...'
                 else:
                     current = current.next
-                    
+
             return "this node is not exist!"
 
 
 
-  
+
   def kthFromEnd(self,k:int):
     '''
     this function will find the value of the node number k
-    from the end and return it .. if k is out of range or negative 
+    from the end and return it .. if k is out of range or negative
     it will return error message
     '''
     length = 0
@@ -103,8 +103,8 @@ class Linked_list:
         current = current.next
 
     if k >= length or k < 0:
-      return f"{k} is not in the range of the list"  
-        
+      return f"{k} is not in the range of the list"
+
     current = self.head
 
     for i in range(0,length-k-1):
@@ -121,12 +121,12 @@ class Linked_list:
 
 
 
-  
+
   # def zipLists(first, second):
   #    '''
   #   this function will take two linked list and merge them in a zip style
   #   ex: linked_list1 = 1->2->3->None , linked_list2 = 4->5->6->None
-  #   will return 1->4->2->5->3->6->None 
+  #   will return 1->4->2->5->3->6->None
   #   '''
   #   #  current1 = first.head
   #   #  current2 = second.head
@@ -155,9 +155,9 @@ class Linked_list:
 
   #           first_next = current1.next
   #           second_next = current2.next
-  
-  #           current2.next = first_next 
-  #           current1.next = current2 
+
+  #           current2.next = first_next
+  #           current1.next = current2
 
   #           current1 = first_next
   #           current2 = second_next
@@ -211,7 +211,7 @@ class Linked_list:
     if first_ll.length() > second_ll.length():
         longer_ll = first_ll.length()
     else:
-        longer_ll = second_ll.length() 
+        longer_ll = second_ll.length()
 
     current1 = first_ll.head
     current2 = second_ll.head
@@ -222,8 +222,8 @@ class Linked_list:
             current1 = current1.next
         if current2:
             new_linked_list.append(current2.data)
-            current2 = current2.next    
-        
+            current2 = current2.next
+
     return new_linked_list.__str__()
 
 
@@ -241,24 +241,24 @@ llist2 = Linked_list()
 # llist1.append(6)
 # llist1.append(5)
 # llist1.append(4)
-  
+
 # print ("First Linked List:")
 # print(llist1)
-  
+
 # llist2.append(8)
 # llist2.append(7)
 # llist2.append(6)
 # llist2.append(5)
 # llist2.append(4)
-  
+
 # print ("Second Linked List:")
-  
+
 # print(llist2)
 # print(Linked_list.zipLists(llist1,llist2))
-  
+
 # print ("Modified first linked list:")
 # print(llist1)
-  
+
 # print ("Modified second linked list:")
 # print(llist2)
 
