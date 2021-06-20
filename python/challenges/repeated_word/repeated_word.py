@@ -14,4 +14,4 @@ def first_repeated(string):
     else:
         raise Exception('no String provided')
 
-print(first_repeated("Once upon a time, there was a brave princess who..."))
+# print(first_repeated("Once upon a time, there was a brave princess who..."))
