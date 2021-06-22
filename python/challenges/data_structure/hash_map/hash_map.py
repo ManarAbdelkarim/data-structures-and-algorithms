@@ -108,16 +108,18 @@ class Hashmap:
         hashed_key = (sum *19)% self.size
         return hashed_key
     def __str__(self):
+        """
+        return the content of the table as string
+        """
         output = []
-
         for i in self.map:
             if i:
                 current = i.head
                 while current:
-                    output.append(' -> '.join(current.data))
+                    output.append(f"{current.data[0]}: {current.data[1]}")
                     current = current.next
-        string_hash = ' ,'.join(output)
-        return string_hash
+        string_hashmap = ' -> '.join(output)
+        return string_hashmap
 
 
     # def add(self, key, value):

@@ -1,9 +1,9 @@
 from challenges.tree_intersection.tree_intersection import *
-
+import pytest
 
 def test_tree_intersection(tree_test1, list_test2):
     actual = tree_intersection(tree_test1, list_test2)
-    expected = []
+    expected =  ['100', '125', '160', '175', '200', '350', '500']
     assert actual == expected
 
 
@@ -25,7 +25,7 @@ def tree_test1():
     tree1.right.right.right.right = TNode(500)
     binary_tree1 = BinaryTree(tree1)
     return binary_tree1
-
+@pytest.fixture
 def list_test2():
     tree2 = TNode(42)
     tree2.left = TNode(100)
