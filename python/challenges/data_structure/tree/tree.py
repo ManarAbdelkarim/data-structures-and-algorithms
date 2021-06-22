@@ -187,82 +187,82 @@
 #      return self.bread_first_list
 
 
-# # class Binary_search_tree:
-# #   def __init__(self,value=None):
-# #     self.node = TNode(value)
-# #   def add(self,value):
-# #     if (self.node.value == None):
-# #       self.node.value = value
-# #     else:
-# #       if value == self.node.value:
-# #         return 'no duplicates aloowed in binary search self'
-# #       if (value < self.node.value):
-# #         if(self.node.left):
-# #           self.node.left.add(value)
-# #         else:
-# #           self.node.left = Binary_search_tree(value)
-# #       else:
-# #         if(self.node.right):
-# #           self.node.right.add(value)
-# #         else:
-# #           self.node.right = Binary_search_tree(value)
+# class Binary_search_tree:
+#   def __init__(self,value=None):
+#     self.node = TNode(value)
+#   def add(self,value):
+#     if (self.node.value == None):
+#       self.node.value = value
+#     else:
+#       if value == self.node.value:
+#         return 'no duplicates aloowed in binary search self'
+#       if (value < self.node.value):
+#         if(self.node.left):
+#           self.node.left.add(value)
+#         else:
+#           self.node.left = Binary_search_tree(value)
+#       else:
+#         if(self.node.right):
+#           self.node.right.add(value)
+#         else:
+#           self.node.right = Binary_search_tree(value)
 
-# #   def in_order(self, lst = []):
-# #     if (self.node.left):
-# #         self.node.left.in_order(lst)
-# #     lst.append(self.node.value)
-# #     if (self.node.right):
-# #         self.node.right.in_order(lst)
-# #     return lst
+#   def in_order(self, lst = []):
+#     if (self.node.left):
+#         self.node.left.in_order(lst)
+#     lst.append(self.node.value)
+#     if (self.node.right):
+#         self.node.right.in_order(lst)
+#     return lst
 
-# #   def contains(self,value,parent= None):
-# #     if value == self.node.value: return True
-# #     if (value < self.node.value):
-# #       if (self.node.left):
-# #         return self.node.left.contains(value, self.node)
-# #       else:
-# #         return False
-# #     else:
-# #       if (self.node.right):
-# #         return self.node.right.contains(value, self.node)
-# #       else:
-# #         return False
+#   def contains(self,value,parent= None):
+#     if value == self.node.value: return True
+#     if (value < self.node.value):
+#       if (self.node.left):
+#         return self.node.left.contains(value, self.node)
+#       else:
+#         return False
+#     else:
+#       if (self.node.right):
+#         return self.node.right.contains(value, self.node)
+#       else:
+#         return False
 
-#   # def sum_odd(self):
-#   #   sum = 0
-#   #   def add_item(root):
-#   #     nonlocal sum
-#   #     if root.value % 2 ==1:
-#   #       sum = sum+ root.values
-#   #     if root.left:
-#   #       add_item(root.left)
-#   #     if root.right:
-#   #       add_item(root.right)
-#   #   return sum
-#   # @pysnooper.snoop()
-#   # def sum_odd(self):
-#   #  sum = 0
-#   #  @pysnooper.snoop()
-#   #  def add_item(root):
-#   #     nonlocal sum
+#   def sum_odd(self):
+#     sum = 0
+#     def add_item(root):
+#       nonlocal sum
+#       if root.value % 2 ==1:
+#         sum = sum+ root.values
+#       if root.left:
+#         add_item(root.left)
+#       if root.right:
+#         add_item(root.right)
+#     return sum
+#   @pysnooper.snoop()
+#   def sum_odd(self):
+#    sum = 0
+#    @pysnooper.snoop()
+#    def add_item(root):
+#       nonlocal sum
 
-#   #     if root.left:
-#   #       return add_item(root.left)
-#   #     if root.right:
-#   #       return add_item(root.right)
-#   #     if root.value % 2 ==1:
-#   #       sum = sum+ root.value
-#   #  add_item(self.node)
-#   #  return sum
-#   # def sum_odd(self) :
+#       if root.left:
+#         return add_item(root.left)
+#       if root.right:
+#         return add_item(root.right)
+#       if root.value % 2 ==1:
+#         sum = sum+ root.value
+#    add_item(self.node)
+#    return sum
+#   def sum_odd(self) :
 
-#   #   if (self.root != None):
-#   #       self.sum_odd(self.root.left)
+#     if (self.root != None):
+#         self.sum_odd(self.root.left)
 
-#   #       # if node is even then print it
-#   #       if (root.key % 2 != 0):
-#   #           print(root.key, end = " ")
-#   #       root.sum_odd(root.right)
+#         # if node is even then print it
+#         if (root.key % 2 != 0):
+#             print(root.key, end = " ")
+#         root.sum_odd(root.right)
 
 
 
@@ -565,41 +565,41 @@
 # #         return True
 
 
-# # class Binary_search_tree:
-# #     def __init__(self,value=None):
-# #       self.node = TNode(value)
-# #     def add(self,value):
-# #         if (self.node.value == None):
-# #             self.node.value = value
-# #         else:
-# #             if value == self.node.value: return 'no duplicates aloowed in binary search self'
-# #             if (value < self.node.value):
-# #                 if(self.node.left):
-# #                     self.node.left.add(value)
-# #                 else: self.node.left = Binary_search_tree(value)
-# #             else:
-# #                 if(self.node.right):
-# #                     self.node.right.add(value)
-# #                 else: self.node.right = Binary_search_tree(value)
+# class Binary_search_tree:
+#     def __init__(self,value=None):
+#       self.node = TNode(value)
+#     def add(self,value):
+#         if (self.node.value == None):
+#             self.node.value = value
+#         else:
+#             if value == self.node.value: return 'no duplicates aloowed in binary search self'
+#             if (value < self.node.value):
+#                 if(self.node.left):
+#                     self.node.left.add(value)
+#                 else: self.node.left = Binary_search_tree(value)
+#             else:
+#                 if(self.node.right):
+#                     self.node.right.add(value)
+#                 else: self.node.right = Binary_search_tree(value)
 
-# #     def in_order(self, lst = []):
-# #         if (self.node.left):
-# #             self.node.left.in_order(lst)
-# #         lst.append(self.node.value)
-# #         if (self.node.right):
-# #             self.node.right.in_order(lst)
-# #         return lst
+#     def in_order(self, lst = []):
+#         if (self.node.left):
+#             self.node.left.in_order(lst)
+#         lst.append(self.node.value)
+#         if (self.node.right):
+#             self.node.right.in_order(lst)
+#         return lst
 
-# #     def contains(self,value,parent= None):
-# #         if value == self.node.value: return True
-# #         if (value < self.node.value):
-# #             if (self.node.left):
-# #                 return self.node.left.contains(value, self.node)
-# #             else: return False
-# #         else:
-# #             if (self.node.right):
-# #                 return  self.node.right.contains(value, self.node)
-# #             else: return False
+#     def contains(self,value,parent= None):
+#         if value == self.node.value: return True
+#         if (value < self.node.value):
+#             if (self.node.left):
+#                 return self.node.left.contains(value, self.node)
+#             else: return False
+#         else:
+#             if (self.node.right):
+#                 return  self.node.right.contains(value, self.node)
+#             else: return False
 
 
 
@@ -742,3 +742,196 @@
 
 
 
+
+
+class Queue:
+    def __init__(self):
+        self.front = None
+
+    def enqueue(self, data):
+        node = Node(data)
+
+        if not self.front:
+            self.front = node
+        else:
+            current = self.front
+            while current.next:
+                current = current.next
+            current.next = node
+            node.next = None
+
+    def dequeue(self):
+        if not self.isEmpty():
+            temp = self.front
+            self.front = self.front.next
+            temp.next = None
+            return temp.data
+        return "empty"
+
+    def isEmpty(self):
+        if self.front:
+            return False
+        return True
+
+class Node:
+    def __init__(self, data = None):
+        self.data = data
+        self.left = None
+        self.right = None
+        self.next = None
+
+class BinaryTree:
+    def __init__(self, root = None):
+        self.root = root
+
+    def preOrder(self):
+        tree = []
+
+        if self.root:
+
+            def walk(node):
+
+                tree.append(node.data)
+
+                if node.left:
+                    walk(node.left)
+
+                if node.right:
+                    walk(node.right)
+
+            walk(self.root)
+            return tree
+
+        else:
+            return "tree is empty"
+
+    def inOrder(self):
+        tree = []
+
+        if self.root:
+
+            def walk(node):
+
+                if node.left:
+                    walk(node.left)
+
+                tree.append(node.data)
+
+                if node.right:
+                    walk(node.right)
+
+            walk(self.root)
+            return tree
+
+        else:
+            return "tree is empty"
+
+    def postOrder(self):
+        tree = []
+
+        if self.root:
+
+            def walk(node):
+
+                if node.left:
+                    walk(node.left)
+
+                if node.right:
+                    walk(node.right)
+
+                tree.append(node.data)
+
+            walk(self.root)
+            return tree
+
+        else:
+            return "tree is empty"
+
+    def find_maximum_value(self):
+
+        maximum_value = self.root.data
+
+        def walk(root):
+
+            nonlocal maximum_value
+
+            if root.data > maximum_value:
+                maximum_value = root.data
+
+            if root.left:
+                walk(root.left)
+
+            if root.right:
+                walk(root.right)
+
+            return maximum_value
+
+        return walk(self.root)
+
+    def breadth_first(self):
+        q = Queue()
+
+        q.enqueue(self.root)
+
+        result = []
+
+        temp = None
+
+        while not q.isEmpty():
+
+            temp = q.dequeue()
+
+            result.append(temp.data)
+
+            if temp.left:
+                q.enqueue(temp.left)
+
+            if temp.right:
+                q.enqueue(temp.right)
+
+        return result
+
+class BinarySearchTree(BinaryTree):
+
+    def add(self, data):
+
+        if not self.root:
+            self.root = Node(data)
+
+        else:
+            def walk(root):
+                if data < root.data:
+                    if not root.left:
+                        root.left = Node(data)
+                        return
+                    else:
+                        walk(root.left)
+                else:
+                    if not root.right:
+                        root.right = Node(data)
+                        return
+                    else:
+                        walk(root.right)
+
+            return walk(self.root)
+
+    def contains(self, data):
+
+        while self.root:
+
+            if self.root.data == data:
+                return True
+
+            elif self.root.data > data:
+                if self.root.left:
+                    self.root = self.root.left
+                else:
+                    return False
+
+            else:
+                if self.root.right:
+                    self.root = self.root.right
+                else:
+                    return False
+
+        return False
