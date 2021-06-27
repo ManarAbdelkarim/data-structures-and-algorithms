@@ -69,3 +69,16 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 - Arguments: node
 - Returns a collection of edges connected to the given node
 - Include the weight of the connection in the returned collection
+
+
+# Challenge Summary
+<!-- Description of the challenge -->
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
