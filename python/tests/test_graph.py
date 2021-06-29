@@ -37,7 +37,7 @@ def test_get_nighbors():
     g.add_vertex(two)
     g.add_edge(zero, two, 3)
     g.add_edge(zero, one)
-    actual = g.get_neighbors(zero)
+    actual = g.get_children(zero)
     expected = [[2,3],[1,0]]
     assert actual == expected
 
@@ -54,7 +54,7 @@ def test_get_nighbors_one_node():
     zero =  Vertex(0)
     g.add_vertex(zero)
     g.add_edge(zero, zero, 3)
-    actual = g.get_neighbors(zero)
+    actual = g.get_children(zero)
     expected = [[0,3]]
     assert actual == expected
 
@@ -90,6 +90,10 @@ def test_breadth_first():
     expected = [1, 2, 3, 4, 5]
     assert expected == actual
 
+def test_breadth_first_search(test_BFS):
+    actual = test_BFS.DFS()
+    expected = ['A', 'B', 'C', 'G', 'D', 'E', 'H', 'F']
+    assert actual == expected
 
 
 
@@ -116,3 +120,23 @@ def test_():
 
   return g
 
+@pytest.fixture
+def test_BFS():
+    gl = Graph()
+    A = gl.add_vertex_directly('A')
+    B = gl.add_vertex_directly('B')
+    C = gl.add_vertex_directly('C')
+    G = gl.add_vertex_directly('G')
+    D = gl.add_vertex_directly('D')
+    E = gl.add_vertex_directly('E')
+    H = gl.add_vertex_directly('H')
+    F = gl.add_vertex_directly('F')
+    gl.add_edge(A, B)
+    gl.add_edge(A, D)
+    gl.add_edge(B, C)
+    gl.add_edge(C, G)
+    gl.add_edge(D, E)
+    gl.add_edge(D, H)
+    gl.add_edge(D, F)
+    gl.add_edge(H, F)
+    return gl

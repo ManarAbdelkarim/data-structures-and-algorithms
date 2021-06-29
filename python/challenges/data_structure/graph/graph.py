@@ -2,7 +2,7 @@ from collections import deque
 # from challenges.data_structure.stacks_and_queues.stacks_and_queues import *
 from collections import deque, defaultdict
 
-from _pytest import capture
+# from _pytest import capture
 
 
 class Queue():
@@ -39,9 +39,13 @@ class Graph:
 
 
   def add_vertex(self,vertex):
+
     self.adjacencyList[vertex] =[]
     return self.adjacencyList.get(vertex)
-
+  def add_vertex_directly(self,char):
+    vertex = Vertex(char)
+    self.adjacencyList[vertex] =[]
+    return vertex
 
   def add_edge(self,start, end, weight =0):
     if not start in self.adjacencyList or  not end in self.adjacencyList:
@@ -50,14 +54,19 @@ class Graph:
     edge = Edge(end, weight)
     self.adjacencyList[start].append(edge)
     return self.adjacencyList.get(start)
-  def get_vertices(self):
-    if not len(self.adjacencyList):
-        raise Exception('GRAPH IS EMPTY 😱')
+#   def get_vertices(self):
+#     if not len(self.adjacencyList):
+#         raise Exception('GRAPH IS EMPTY 😱')
 
-    collection = []
-    for k in self.adjacencyList.keys():
-      collection.append(k.value)
-    return collection
+#     collection = []
+#     for k in self.adjacencyList.keys():
+#       collection.append(k.value)
+#     return collection
+
+  def get_vertices(self):
+      return self.adjacencyList.keys()
+
+
 
 
   def get_unique_vertices(self):
@@ -71,7 +80,7 @@ class Graph:
     return collection
 
 
-  def get_neighbors(self,vertex):
+  def get_children (self,vertex):
       result = []
       if len(self.adjacencyList.get(vertex)):
           print('whats wront with', self.adjacencyList.get(vertex))
@@ -79,9 +88,18 @@ class Graph:
             result.append([self.adjacencyList.get(vertex)[l].vertex.value,self.adjacencyList.get(vertex)[l].weight])
       return result
 
-  def get_children(self, vertex):
+  def get_neighbors(self, vertex):
 
         return self.adjacencyList.get(vertex, [])
+
+  def __iter__(self):
+        """[summary]
+            magic function to iterate over the Graph
+        Returns:
+            [type]: [description]
+        """
+        self._iter_obj = iter(self.adjacencyList)
+        return self._iter_obj
 
 
   def breadth_first(self, node):
@@ -93,13 +111,30 @@ class Graph:
         while len(queue):
             cuttent_v = queue.dequeue()
             output.append(cuttent_v)
-            neighbors = self.get_children(cuttent_v)
+            neighbors = self.get_neighbors(cuttent_v)
             for edge in neighbors:
                 vert = edge.vertex
                 if vert not in visited:
                     visited.add(vert)
                     queue.enqueue(vert)
         return output
+
+  def DFS(self):
+        """
+        Graph Depth First Search
+        """
+        visited = set()
+        lst = []
+        vertex = next(iter(self.get_vertices()))
+        def DFS_helper(vertex):
+            visited.add(vertex)
+            neighbors = self.get_neighbors(vertex)
+            lst.append(vertex.value)
+            for neighbor in neighbors:
+                if neighbor.vertex not in visited:
+                    DFS_helper(neighbor.vertex)
+        DFS_helper(vertex)
+        return lst
 
 
 
@@ -147,3 +182,26 @@ if __name__ == "__main__":
 #     print(x[i].vertex.value)
 
 #   print(g.get_all())
+
+gl = Graph()
+
+
+A = gl.add_vertex_directly('A')
+B = gl.add_vertex_directly('B')
+C = gl.add_vertex_directly('C')
+G = gl.add_vertex_directly('G')
+D = gl.add_vertex_directly('D')
+E = gl.add_vertex_directly('E')
+H = gl.add_vertex_directly('H')
+F = gl.add_vertex_directly('F')
+print(F)
+gl.add_edge(A, B)
+gl.add_edge(A, D)
+gl.add_edge(B, C)
+gl.add_edge(C, G)
+gl.add_edge(D, E)
+gl.add_edge(D, H)
+gl.add_edge(D, F)
+gl.add_edge(H, F)
+
+print(gl.DFS())
