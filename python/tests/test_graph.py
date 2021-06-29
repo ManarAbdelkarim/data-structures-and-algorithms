@@ -91,7 +91,7 @@ def test_breadth_first():
     assert expected == actual
 
 def test_breadth_first_search(test_BFS):
-    actual = test_BFS.BFS()
+    actual = test_BFS.DFS()
     expected = ['A', 'B', 'C', 'G', 'D', 'E', 'H', 'F']
     assert actual == expected
 
