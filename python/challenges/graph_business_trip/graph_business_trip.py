@@ -2,25 +2,25 @@
 from challenges.data_structure.graph.graph import *
 
 def business_trip(graph, array) :
-     tripCost = 0
+     trip_cost = 0
      feasible = True
      values = graph.adjacencyList. items()
 
-     arrayOFValues = [*values]
+     array_of_values = [*values]
      filtered = []
-     for place in arrayOFValues:
+     for place in array_of_values:
          if  place in array:
              filtered.append(place)
 
 
      for i in range (0,len(filtered)):
       if array[i] == filtered[i][0].value:
-        tripCost += filtered[i][1][0].weight
+        trip_cost += filtered[i][1][0].weight
       else:
         feasible = False
 
      if feasible :
-      return f'{True}, Cost:{tripCost}'
+      return f'{True}, Cost:{trip_cost}'
      else :
       return False
 
