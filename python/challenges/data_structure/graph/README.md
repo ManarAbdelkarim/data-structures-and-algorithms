@@ -71,3 +71,4 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 - Include the weight of the connection in the returned collection
 
 
+![](../../img/DFSG.jpg)

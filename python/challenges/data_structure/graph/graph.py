@@ -54,6 +54,16 @@ class Graph:
     edge = Edge(end, weight)
     self.adjacencyList[start].append(edge)
     return self.adjacencyList.get(start)
+
+
+  def add_undirected_edge(self,start, end, weight =0):
+    self.add_edge(start, end, weight)
+    self.add_edge(end, start, weight)
+
+
+
+
+
 #   def get_vertices(self):
 #     if not len(self.adjacencyList):
 #         raise Exception('GRAPH IS EMPTY 😱')
@@ -83,7 +93,7 @@ class Graph:
   def get_children (self,vertex):
       result = []
       if len(self.adjacencyList.get(vertex)):
-          print('whats wront with', self.adjacencyList.get(vertex))
+        #   print('whats wront with', self.adjacencyList.get(vertex))
           for l in range(len(self.adjacencyList.get(vertex))):
             result.append([self.adjacencyList.get(vertex)[l].vertex.value,self.adjacencyList.get(vertex)[l].weight])
       return result
@@ -145,29 +155,29 @@ class Graph:
 
 if __name__ == "__main__":
   g =  Graph()
-  zero =  Vertex(0)
+  Zarqa =  Vertex(0)
   one =  Vertex(1)
-  two =  Vertex(2)
+  Amman =  Vertex(2)
   twoToo =  Vertex(2)
-  three =  Vertex(3)
-  four =  Vertex(4)
+  Irbid =  Vertex(3)
+  Jarash =  Vertex(4)
   fourToo =  Vertex(4)
   five =  Vertex(5)
 
 #   g.add_vertex(zero)
   g.add_vertex(one)
-  g.add_vertex(two)
+  g.add_vertex(Amman)
 #   g.add_vertex(twoToo)
-  g.add_vertex(three)
-  g.add_vertex(four)
+  g.add_vertex(Irbid)
+  g.add_vertex(Jarash)
 #   g.add_vertex(fourToo)
   g.add_vertex(five)
 
-  g.add_edge(one, two, 3)
-  g.add_edge(one, three)
-  g.add_edge(one, four)
-  g.add_edge(three, five)
-  g.add_edge(four, five)
+  g.add_edge(one, Amman, 3)
+  g.add_edge(one, Irbid)
+  g.add_edge(one, Jarash)
+  g.add_edge(Irbid, five)
+  g.add_edge(Jarash, five)
 #   print('here',g.add_edge(one, three))
 
 #   print('size🎉',g.size())
@@ -194,7 +204,7 @@ D = gl.add_vertex_directly('D')
 E = gl.add_vertex_directly('E')
 H = gl.add_vertex_directly('H')
 F = gl.add_vertex_directly('F')
-print(F)
+# print(F)
 gl.add_edge(A, B)
 gl.add_edge(A, D)
 gl.add_edge(B, C)
@@ -204,4 +214,4 @@ gl.add_edge(D, H)
 gl.add_edge(D, F)
 gl.add_edge(H, F)
 
-print(gl.DFS())
+# print(gl.DFS())
