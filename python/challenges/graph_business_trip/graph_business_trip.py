@@ -12,17 +12,13 @@ def business_trip(graph, array):
     filtered = []
 
     for place in array_of_values:
-        print(place[0].value)
         if place[0].value in array:
             filtered.append(place)
-    print(filtered)
     for i,elem in enumerate(filtered):
         if array[i] == elem[0].value:
-            print('heeeeeeereeeee',elem[0].value)
 
 
             if elem[0].value == filtered[i][0].value:
-                print('array i', array[i] , filtered[i][1][0].vertex.value , filtered[i][1][0].weight)
                 trip_cost += filtered[i][1][0].weight
             else:
                 feasible = False
@@ -81,9 +77,6 @@ def minimum_Height_Tree( n: int, edges: list) -> list:
     for i in range(n):
        if  len(adj[i]) == 1:
            leaves.append(i)
-    print(leaves)
-
-    print('len n' ,n)
 
     remaining = n
     while remaining > 2:
@@ -238,13 +231,13 @@ if __name__ == "__main__":
     # adj : [[1,6],[0,2,3],[1],[1, 4,5]]
 
     # print(minimum_Height_Tree(undirectedEdges , 7))
-    print(minimum_Height_Tree( 7,undirectedEdges))
+    # print(minimum_Height_Tree( 7,undirectedEdges))
 
 
 
 
 
-    # print(business_trip(myGraph, trips))
+    print(business_trip(myGraph, trips))
 
     # adjacencyList = {0: [1, 2], 1: [2, 0], 2: [0], 3: [4], 4: [3], 5:[]}
 
